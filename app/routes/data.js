@@ -77,6 +77,30 @@ router.get('/write', (req, res, next) => {
   });
 });
 
+// 阅读模块写入接口
+app.post('/write_config', (req, res, next) => {
+  // TODO: 对数据进行校验
+  // 防XSS攻击 require('XSS')
+  const data = req.body.data;
+  const obj = JSON.parse(data);
+  const newData = JSON.stringify(obj);
+
+  fs.writeFile(PATH + 'config.json', newData, (err) => {
+    if(err) {
+      return res.send({
+        status: 0,
+        info: '写入文件失败'
+      });
+    }
+    return res.send({
+      status: 1,
+      info: obj
+    });
+  });
+
+});
+
+// guid函数
 function guidGenerate() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
     let r = Math.random() * 16 | 0,
