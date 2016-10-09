@@ -78,7 +78,7 @@ router.get('/write', (req, res, next) => {
 });
 
 // 阅读模块写入接口
-app.post('/write_config', (req, res, next) => {
+router.post('/write_config', (req, res, next) => {
   // TODO: 对数据进行校验
   // 防XSS攻击 require('XSS')
   const data = req.body.data;
@@ -96,6 +96,33 @@ app.post('/write_config', (req, res, next) => {
       status: 1,
       info: obj
     });
+  });
+
+});
+
+// 登录页面路由
+router.get('/login', (req, res, next) => {
+  res.render('login', { title: '登录后台管理系统' });
+});
+
+router.post('/login', (req, res, next) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  // TODO: 对用户名、密码进行校验
+  // XSS处理、判空
+  //密码加密，md5加密（password + 随机字符）
+  if(username === 'admin' && password === '123456') {
+    req.session.user = {
+      username: username,
+    };
+    return res.send({
+      status: 1
+    });
+  }
+  res.send({
+    status: 0,
+    info: '登录系统失败'
   });
 
 });
