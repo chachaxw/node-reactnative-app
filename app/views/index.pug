@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.nav
+    div.logo
+      img(src='images/logo.svg')
+  div.container
+    div.side-area
+      h1= title
+      p 欢迎来到APP后台管理系统
+    div.main-area

@@ -3,11 +3,12 @@ const fs = require('fs');
 const router = express.Router();
 const PATH = 'app/model/data/';
 
-// 读取数据模块
+// 读取数据模块，供客户端调用
+// 查询接口，token校验
+// 公共接口，无需校验
 // data/read?type=it
 router.get('/read', (req, res, next) => {
   const type = req.query.type || '';
-
   console.log(req.query);
   fs.readFile(PATH + type + '.json', (err, data) => {
     if(err) {
@@ -30,6 +31,12 @@ router.get('/read', (req, res, next) => {
 
 // 数据存储模块
 router.get('/write', (req, res, next) => {
+  if(!req.session.user) {
+    return res.send({
+      status: 0,
+      info: '未鉴权认证，请先登录'
+    });
+  }
   const type = req.query.type || '';
   const url = req.query.url || '';
   const title = req.query.title || '';
@@ -40,7 +47,6 @@ router.get('/write', (req, res, next) => {
       info: '提交的字段不全'
     });
   }
-
   let filePath = PATH + type + '.json';
   // 读取文件
   fs.readFile(PATH + type + '.json', (err, data) => {

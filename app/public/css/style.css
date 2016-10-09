@@ -1,8 +1,30 @@
+@import "./normalize.css";
 body {
-  padding: 50px;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
   color: #00B7FF;
+}
+
+.nav {
+  background-color: #222;
+  height: 64px;
+}
+.logo {
+  margin-top: 12px;
+  display: inline-block;
+  padding: 0 20px;
+}
+.container {
+  display: flex;
+}
+.side-area {
+  width: 250px;
+  float: left;
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
+.main-area {
+  flex: 1 auto;
 }
