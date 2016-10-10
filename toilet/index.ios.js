@@ -24,16 +24,14 @@ class toilet extends Component {
   static displayName = 'TabBarExample';
 
   state = {
-    selectedTab: 'redTab',
-    notifCount: 0,
+    selectedTab: 'toilet',
     presses: 0,
   };
 
-  _renderContent = (color, pageText, num) => {
+  _renderContent = (color, pageText) => {
     return (
       <View style={[styles.tabContent, {backgroundColor: color}]}>
         <Text style={styles.tabText}>{pageText}</Text>
-        <Text style={styles.tabText}>{num} re-renders of the {pageText}</Text>
       </View>
     );
   };
@@ -41,44 +39,52 @@ class toilet extends Component {
   render() {
     return (
       <TabBarIOS
-        unselectedTintColor="yellow"
-        tintColor="white"
-        barTintColor="darkslateblue">
+        unselectedTintColor="grey"
+        tintColor="slategray"
+        barTintColor="ghostwhite">
         <TabBarIOS.Item
           title="卫生间"
-          icon={{uri: img1_base64, scale: 3}}
-          selected={this.state.selectedTab === 'blueTab'}
+          icon={{uri: img1_base64, scale: 4}}
+          selected={this.state.selectedTab === 'toilet'}
           onPress={() => {
             this.setState({
-              selectedTab: 'blueTab',
+              selectedTab: 'toilet',
             });
           }}>
-          {this._renderContent('#414A8C', 'Blue Tab')}
+          {this._renderContent('#FAFAFA', 'Toilet')}
         </TabBarIOS.Item>
         <TabBarIOS.Item
-          icon={{uri: img3_base64, scale: 3}}
-          badge={this.state.notifCount > 0 ? this.state.notifCount : undefined}
-          selected={this.state.selectedTab === 'redTab'}
+          title="发现"
+          icon={{uri: img2_base64, scale: 4}}
+          selected={this.state.selectedTab === 'discover'}
           onPress={() => {
             this.setState({
-              selectedTab: 'redTab',
-              notifCount: this.state.notifCount + 1,
+              selectedTab: 'discover',
             });
           }}>
-          {this._renderContent('#783E33', 'Red Tab', this.state.notifCount)}
+          {this._renderContent('#FAFAFA', 'Discover')}
         </TabBarIOS.Item>
         <TabBarIOS.Item
-          renderAsOriginal
+          title="天气"
+          icon={{uri: img3_base64, scale: 4}}
+          selected={this.state.selectedTab === 'weather'}
+          onPress={() => {
+            this.setState({
+              selectedTab: 'weather',
+            });
+          }}>
+          {this._renderContent('#FAFAFA', 'Weather')}
+        </TabBarIOS.Item>
+        <TabBarIOS.Item
           title="设置"
-          icon={{uri: img4_base64, scale: 3}}
-          selected={this.state.selectedTab === 'greenTab'}
+          icon={{uri: img4_base64, scale: 4}}
+          selected={this.state.selectedTab === 'setting'}
           onPress={() => {
             this.setState({
-              selectedTab: 'greenTab',
-              presses: this.state.presses + 1
+              selectedTab: 'setting',
             });
           }}>
-          {this._renderContent('#21551C', 'Green Tab', this.state.presses)}
+          {this._renderContent('#FAFAFA', 'Setting')}
         </TabBarIOS.Item>
       </TabBarIOS>
     );
@@ -91,7 +97,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   tabText: {
-    color: 'white',
+    color: 'slategrey',
     margin: 50,
   },
 });
