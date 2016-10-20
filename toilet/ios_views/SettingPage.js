@@ -5,6 +5,7 @@ import {
   Navigator,
   Text,
   View,
+  ScrollView,
 } from 'react-native';
 const NavigationBar = Navigator.NavigationBar;
 
@@ -13,6 +14,8 @@ class SettingPage extends Component {
     return (
       <View>
         <Text style={style.alignCenter}>设置</Text>
+        <ScrollView contentContainerStyle={style.contentContainer}>
+        </ScrollView>
       </View>
     );
   };
@@ -22,6 +25,14 @@ const style = StyleSheet.create({
   alignCenter: {
     textAlign: 'center',
     marginTop: 30,
+  },
+  contentContainer: {
+    paddingVertical: 20,
+    backgroundColor: '#fafafa',
+  },
+  img: {
+    width: 64,
+    height: 64,
   }
 });
 

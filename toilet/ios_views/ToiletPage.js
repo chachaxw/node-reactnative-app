@@ -15,7 +15,7 @@ class ToiletPage extends Component {
   render() {
     return (
       <View>
-        <Text style={style.alignCenter}>卫生间</Text>
+        <Text style={style.alignCenter}>Hello</Text>
         <WebView source={{uri: nearByURL}}></WebView>
       </View>
     );
