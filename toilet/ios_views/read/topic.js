@@ -9,7 +9,6 @@ import {
   TouchableOpacity
   } from 'react-native';
 
-
 import Util from './../util';
 import List from './list';
 import TWebView from './../webview';
