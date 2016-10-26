@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
-  Navigator,
-  WebView,
   Text,
   View,
 } from 'react-native';
-const NavigationBar = Navigator.NavigationBar;
+
+import TWebView from './WebView';
+
 const nearByURL = 'http://123.57.39.116:3000/html/nearby.html';
 // const nearByURL = './../html/location.html';
 
 class ToiletPage extends Component {
   render() {
     return (
-      <View>
-        <Text style={style.alignCenter}>Hello</Text>
-        <WebView source={{uri: nearByURL}}></WebView>
-      </View>
+      <TWebView url={nearByURL} isNearBy={true}/>
     );
   };
 };
