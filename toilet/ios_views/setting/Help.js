@@ -5,7 +5,7 @@ import {
   View,
   Image,
   ScrollView
-  } from 'react-native';
+} from 'react-native';
 
 import Util from './../util';
 
@@ -23,7 +23,7 @@ class Help extends Component{
         <Text style={styles.text}>Q: 能否保证数据的准确性?</Text>
         <Text style={styles.text}>A: 高德地图提供的数据服务是相对很精准的,但是不包括用户手机GPS定位不准的情况.</Text>
         <Text style={styles.text}>Q: 其他</Text>
-        <Text style={styles.text}>A: 如有其他问题,可发送邮件到wlhmyit@126.com .</Text>
+        <Text style={styles.text}>A: 如有其他问题,可发送邮件到867571123@qq.com .</Text>
         <Text style={styles.text}>......</Text>
       </ScrollView>
     );

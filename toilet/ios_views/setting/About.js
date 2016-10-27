@@ -13,7 +13,7 @@ class About extends Component{
   render(){
     return(
       <ScrollView style={styles.container}>
-        <Text style={styles.text}>如果问题,请联系: 867571123t@qq.com</Text>
+        <Text style={styles.text}>如果问题,请联系: 867571123@qq.com</Text>
       </ScrollView>
     );
   }

@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   NavigatorIOS,
   ScrollView
-  } from 'react-native';
+} from 'react-native';
 
 import TWebView from './WebView';
 
@@ -16,7 +16,7 @@ import Util from './util';
 import Help from './setting/Help';
 import Detail from './setting/Detail';
 import Tips from './setting/Tips';
-//import About from './setting/about';
+// import About from './setting/About';
 
 class SettingPage extends Component{
   render(){
@@ -29,7 +29,7 @@ class SettingPage extends Component{
         </View>
         <View style={styles.container}>
           <View style={{justifyContent:'center', alignItems: 'center',marginTop:10,marginBottom:20}}>
-            <Image style={styles.icon} source={require('image!logo')} resizeMode="contain"/>
+            <Image style={styles.icon} source={{uri: 'http://img1.imgtn.bdimg.com/it/u=2953892873,3918777474&fm=21&gp=0.jpg'}} resizeMode="contain"/>
             <Text style={[styles.text, {fontSize:13}]}>v1.0.0</Text>
           </View>
           <TouchableOpacity onPress={this._showDetail.bind(this)}>
@@ -74,7 +74,7 @@ class SettingPage extends Component{
   }
 
   _showAbout(){
-    AlertIOS.alert('如有问题,联系', 'wlhmyit@126.com', [{text: '确认'}]);
+    AlertIOS.alert('如有问题,联系', '867571123@qq.com', [{text: '确认'}]);
     //this.props.navigator.push({
     //  component: About,
     //  title: '关于',

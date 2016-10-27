@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 import {
   PixelRatio,
   ActivityIndicatorIOS
-  } from 'react-native';
+} from 'react-native';
 
 
 module.exports = {
