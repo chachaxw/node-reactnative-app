@@ -1,27 +1,48 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
-  Navigator,
   Text,
   View,
+  TextInput,
+  ScrollView,
+  Image,
+  NavigatorIOS,
+  RefreshControl,
+  ActivityIndicator
 } from 'react-native';
-const NavigationBar = Navigator.NavigationBar;
+
+import Util from './util';
+import Recommend from './read/Recommend';
+import Category from './read/Category';
+import Topic from './read/Topic';
+import Search from './read/Search';
 
 class DiscoverPage extends Component {
   render() {
     return (
-      <View>
-        <Text style={style.alignCenter}>发现</Text>
-      </View>
+      <NavigatorIOS
+        style={styles.container}
+        initialRoute={{
+          component: ReadView,
+          title: '发现',
+          navigationBarHidden: true
+      }}/>
     );
   };
 };
 
-const style = StyleSheet.create({
-  alignCenter: {
-    textAlign: 'center',
-    marginTop: 30,
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  hr:{
+    borderWidth: Util.pixel,
+    borderColor: '#ccc',
+    marginTop:20,
+    marginBottom:10
+  },
+  space:{
+    height:70
   }
 });
 

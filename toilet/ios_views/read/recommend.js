@@ -10,8 +10,8 @@ import {
   } from 'react-native';
 
 import Util from './../util';
-import List from './list';
-import TWebView from './../webview';
+import List from './List';
+import TWebView from './../WebView';
 
 class Recommend extends Component{
   constructor(props){

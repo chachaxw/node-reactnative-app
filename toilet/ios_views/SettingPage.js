@@ -88,7 +88,6 @@ class SettingPage extends Component{
       title: '功能介绍',
       barTintColor: '#fff'
     });
-
   }
 }
 

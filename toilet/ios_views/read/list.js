@@ -10,7 +10,7 @@ import {
   } from 'react-native';
 
 import Util from './../util';
-import TWebView from './../webview';
+import TWebView from './../WebView';
 
 class List extends Component{
   constructor(props){
