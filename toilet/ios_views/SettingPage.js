@@ -11,14 +11,13 @@ import {
 } from 'react-native';
 
 import TWebView from './WebView';
-
 import Util from './util';
 import Help from './setting/Help';
 import Detail from './setting/Detail';
 import Tips from './setting/Tips';
 // import About from './setting/About';
 
-class SettingPage extends Component{
+class SettingView extends Component{
   render(){
     return(
       <ScrollView style={styles.container}>
@@ -91,7 +90,7 @@ class SettingPage extends Component{
   }
 }
 
-class Setting extends Component{
+class SettingPage extends Component{
   render(){
     return(
       <NavigatorIOS
@@ -132,4 +131,5 @@ const styles = StyleSheet.create({
     height:100
   }
 });
+
 export default SettingPage;
