@@ -30,15 +30,15 @@ class ReadView extends Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this._fetchData();
   }
 
-  _fetchData(callback){
+  _fetchData(callback) {
     var self = this;
-    Util.get('http://123.57.39.116:3000/data/read?type=config', function(data){
-      if(data.status){
-        let obj = data.data;
+    Util.get('http://localhost:3030/data/read?type=config', function(res){
+      if(res.status === 1){
+        let obj = res.data;
         self.setState({
           isShow: true,
           recommendTopic: obj.recommendTopic,
@@ -48,15 +48,15 @@ class ReadView extends Component {
           refreshing: false
         });
       }else{
-        alert('服务异常,正在紧急修复,请耐心等待');
+        alert('服务异常，请联系867571123@qq.com');
       }
-    }, function(err){
+    }, function(err) {
       alert(err);
       alert('服务异常,正在紧急修复,请耐心等待2');
     });
   }
 
-  _onRefresh(){
+  _onRefresh() {
     var self = this;
     this.setState({refreshing: true});
     this._fetchData();

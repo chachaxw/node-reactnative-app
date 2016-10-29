@@ -6,10 +6,9 @@ const PATH = 'app/model/data/';
 // 读取数据模块，供客户端调用
 // 查询接口，token校验
 // 公共接口，无需校验
-// data/read?type=it
+// data/read?type=config
 router.get('/read', (req, res, next) => {
   const type = req.query.type || '';
-  console.log(req.query);
   fs.readFile(PATH + type + '.json', (err, data) => {
     if(err) {
       return res.send({
@@ -17,14 +16,10 @@ router.get('/read', (req, res, next) => {
         info: '读取文件出现异常'
       });
     }
-    const count = 50;
     const obj = JSON.parse(data.toString());
-    if(obj.length > count) {
-      obj = obj.slice(0, count);
-    }
-    return res.send({
+    return res.json({
       status: 1,
-      data: obj
+      data: obj.data
     });
   });
 });

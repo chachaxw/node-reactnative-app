@@ -7,7 +7,7 @@ import {
   Image,
   TouchableOpacity,
   ListView
-  } from 'react-native';
+} from 'react-native';
 
 import Util from './../util';
 import TWebView from './../WebView';

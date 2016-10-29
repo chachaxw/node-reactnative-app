@@ -1,6 +1,11 @@
 # Node-ReactNative-APP
 
-#### start project:
+#### start node server:
 ```
 npm install && npm start
+```
+
+#### start react-native app
+```
+react-native run-ios
 ```
