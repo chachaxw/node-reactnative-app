@@ -6,23 +6,15 @@ import {
   Text,
   View,
 } from 'react-native';
-const NavigationBar = Navigator.NavigationBar;
+import TWebView from './WebView';
 
+const url = 'http://123.57.39.116:3000/html/weather.html';
 class WeatherPage extends Component {
   render() {
     return (
-      <View>
-        <Text style={style.alignCenter}>天气</Text>
-      </View>
+      <TWebView url={url} isWeather={true}/>
     );
   };
 };
-
-const style = StyleSheet.create({
-  alignCenter: {
-    textAlign: 'center',
-    marginTop: 30,
-  }
-});
 
 export default WeatherPage;
