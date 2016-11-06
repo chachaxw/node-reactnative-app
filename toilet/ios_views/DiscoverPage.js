@@ -36,7 +36,7 @@ class ReadView extends Component {
 
   _fetchData(callback) {
     var self = this;
-    Util.get('http://localhost:3030/data/read?type=config', function(res){
+    Util.get('http://localhost:3000/data/read?type=config', function(res){
       if(res.status === 1){
         let obj = res.data;
         self.setState({
@@ -52,7 +52,7 @@ class ReadView extends Component {
       }
     }, function(err) {
       alert(err);
-      alert('服务异常,正在紧急修复,请耐心等待2');
+      alert('服务异常,正在紧急修复...');
     });
   }
 
